@@ -27,4 +27,4 @@ He wants to make an app that would help him manage the articles that being poste
 - unit tests.
 
 # Task Deadline
-- Monday 26/04/2021 12:00 PM.
+- Sunday 9/05/2021 12:00 PM.
