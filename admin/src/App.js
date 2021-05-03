@@ -2,24 +2,42 @@ import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import authProvider from './authProvider.js';
 import jsonServerProvider from 'ra-data-json-server';
+import jsonapiClient from "ra-jsonapi-client";
 
-import { PostList, PostEdit, PostCreate, PostIcon } from '@/resources/posts.js'
+import articleResource from '@/resources/articles.js'
+import userResource from '@/resources/users.js'
 
+const articlesResourceProps = {
+  list: articleResource.ListResource,
+  edit: articleResource.EditResource,
+  create: articleResource.CreateResource,
+  icon: articleResource.Icon
+}
 
+const usersResourceProps = {
+  list: userResource.ListResource,
+  edit: userResource.EditResource,
+  create: userResource.CreateResource,
+  icon: userResource.Icon
+}
+
+const dummyDataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
+const dataProvider = jsonapiClient('http://localhost:3000/api/v1', { headers: { Accept: 'application/vnd.api+json' } });
 
 const App = () => {
-  console.log(authProvider);
   return (
     <Admin
-      dataProvider={jsonServerProvider('http://jsonplaceholder.typicode.com')}
+      dataProvider={dataProvider}
       authProvider={authProvider}
     >
       <Resource
-        name="posts"
-        list={PostList}
-        edit={PostEdit}
-        create={PostCreate}
-        icon={PostIcon}
+        name="articles"
+        {...articlesResourceProps}
+      />
+
+      <Resource
+        name="users"
+        {...usersResourceProps}
       />
     </Admin>
   )

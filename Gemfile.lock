@@ -79,6 +79,10 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    jsonapi-resources (0.10.4)
+      activerecord (>= 4.1)
+      concurrent-ruby
+      railties (>= 4.1)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -172,6 +176,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   devise_token_auth (~> 1.1)
+  jsonapi-resources (~> 0.10.4)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
