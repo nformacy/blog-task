@@ -38,6 +38,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.0]
       t.json :tokens
 
       ## Authorization
+      t.boolean :super_admin, default: false, null: false
       t.json :permissions
 
       t.timestamps

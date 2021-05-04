@@ -21,10 +21,31 @@ const usersResourceProps = {
   icon: userResource.Icon
 }
 
-const dummyDataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
-const dataProvider = jsonapiClient('http://localhost:3000/api/v1', { headers: { Accept: 'application/vnd.api+json' } });
+// const dummyDataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
 
 const App = () => {
+  const [token, setToken] = React.useState({});
+  const dataProvider = jsonapiClient('http://localhost:3000/api/v1', {
+    transformRequest: (data, headers) => {
+      if (data !== undefined) {
+        headers['Content-Type'] = 'application/vnd.api+json; charset=utf-8';
+
+        return data
+      } else {
+        return data;
+      }
+    },
+    headers: {
+      Accept: 'application/vnd.api+json',
+      'content-type': 'application/vnd.api+json; charset=utf-8',
+      ...(token || {})
+    }
+  });
+
+  React.useEffect(() => {
+    setToken(JSON.parse(localStorage.getItem('token')) || {})
+  }, [localStorage.getItem('token')])
+
   return (
     <Admin
       dataProvider={dataProvider}

@@ -4695,9 +4695,9 @@ has-flag@^4.0.0:
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
 has-symbols@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.1.tgz#9f5214758a44196c406d9bd76cebf81ec2dd31e8"
-  integrity sha512-PLcsoqu++dmEIZB+6totNFKq/7Do+Z0u4oT0zKOJNl3lYK6vGwwu2hjHs+68OEZbTjiUE9bgOABXbP/GvrS0Kg==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.2.tgz#165d3070c00309752a1236a479331e3ac56f1423"
+  integrity sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==
 
 has-value@^0.3.1:
   version "0.3.1"
@@ -6777,10 +6777,15 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
-object-inspect@^1.8.0, object-inspect@^1.9.0:
+object-inspect@^1.8.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.9.0.tgz#c90521d74e1127b67266ded3394ad6116986533a"
   integrity sha512-i3Bp9iTqwhaLZBxGkRfo5ZbE07BQRT7MGu8+nNgwW9ItGp1TzCTw2DLEoWwjClxBjOFI/hWljTAmYGCEwmtnOw==
+
+object-inspect@^1.9.0:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.10.2.tgz#b6385a3e2b7cae0b5eafcf90cddf85d128767f30"
+  integrity sha512-gz58rdPpadwztRrPjZE9DZLOABUpTGdcANUgOwBFO1C+HZZhePoP83M65WGDmbpwFYJSWqavbl4SgDn4k8RYTA==
 
 object-is@^1.0.1:
   version "1.1.5"
@@ -7596,10 +7601,9 @@ ra-i18n-polyglot@^3.14.2:
     node-polyglot "^2.2.2"
     ra-core "^3.14.2"
 
-ra-jsonapi-client@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/ra-jsonapi-client/-/ra-jsonapi-client-0.7.2.tgz#14f6fcc3daa6566a606a6acb56f4601665661c95"
-  integrity sha512-geV5gdwubbY/IUgrmSOXvkPnrepneGjG3bGI33cgcAaqHsGrPr85Yz8LuTFoexifGLMb5S8J+C7/xr9hwvXOOw==
+ra-jsonapi-client@maxios/ra-jsonapi-client:
+  version "0.7.3"
+  resolved "https://codeload.github.com/maxios/ra-jsonapi-client/tar.gz/c1241fcee7521e3adc40a51be56553faf76a8b91"
   dependencies:
     axios "^0.21.1"
     deepmerge "^2.1.1"

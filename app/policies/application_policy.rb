@@ -34,6 +34,10 @@ class ApplicationPolicy
     false
   end
 
+  def super_admin?
+    user.super_admin
+  end
+
   class Scope
     attr_reader :user, :scope
 

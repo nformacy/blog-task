@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_133056) do
     t.string "image"
     t.string "email"
     t.json "tokens"
+    t.boolean "super_admin"
     t.json "permissions"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -30,8 +30,6 @@ export const EditResource = (props) => (
 );
 
 export const CreateResource = (props) => {
-  const current_user = JSON.parse(localStorage.getItem('auth')).data;
-
   return (
     <Create title="Create a User" {...props}>
       <SimpleForm>

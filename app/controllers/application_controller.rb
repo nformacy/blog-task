@@ -4,4 +4,8 @@ class ApplicationController < ActionController::API
   include Pundit
 
   rescue_from Pundit::NotAuthorizedError, with: Proc.new { head :forbidden }
+
+  def context
+    {current_user: current_user}
+  end
 end
