@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>legen- wait for it-dary news</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <div class="navbar-text" >
+        <span class="logo"><strong>legen- wait for it-dary news</strong></span>
+          <div class="right" >
+            <% if user_signed_in? %>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Logged in as:</td>
+                    <td><strong><%= current_user.email %></strong></td>
+                    <td><div class="destroy-button"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            <% end %>
+          </div>
+      </div>
+    <%= yield %>
+  </body>
+</html>

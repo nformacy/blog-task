@@ -1,0 +1,67 @@
+<div>
+      <%if (current_user.admin? == true) && (@unapproved_articles.count > 0) %>
+      <h1><td>pending for approve articles: <%=@unapproved_articles.count%></td></h1>
+  <% @unapproved_articles.each do |article| %>
+    <tr>
+     <div  class="article">
+      <h2 class="article-title"><td>author: <%= article.author_name %></td></h2>
+      <h3 class="article-body"><td>title: <%= article.title %></td></h3>
+      <h4 class="article-body"><td>description: <%= article.description %></td></h4>
+       <% if current_user.admin? == true %>
+       <span class="delete-button">
+        <%= link_to "Delete", article_path(article.id), :confirm => "Are you sure?", :method => :delete %>
+        </span>
+        <%if article.approved? != true %>
+        <span class="approve-button">
+        <%= link_to "approve", approve_article_path(article.id), method: :put  %>
+        </span>
+        <% end %>
+      <% end %>
+      </div>
+    </tr>
+  <% end %>
+  <% end %>
+</div>
+<div>
+      <h1><td>Your approved articles</td></h1>
+      <%if current_user.approved_articles == 0 %>
+      You don't have any approved articles yet
+      <% else %>
+         <% @myarticles.each do |article| %>
+         <tr>
+          <div  class="article">
+      <h2 class="article-title"><td>author: <%= article.author_name %></td></h2>
+      <h3 class="article-body"><td>title: <%= article.title %></td></h3>
+      <h4 class="article-body"><td>description: <%= article.description %></td></h4>
+           <% if current_user.admin? == true %>
+           <span class="delete-button">
+          <%= link_to "Delete", article_path(article.id), :confirm => "Are you sure?", :method => :delete %>
+          </span>
+      <% end %>
+      </div>
+    </tr>
+        <% end %>
+    <% end %>
+</div>
+
+<div>
+      <h1><td>Authors articles</td></h1>
+  <% @articles.each do |article| %>
+    <tr>
+        <div  class="article">
+      <h2 class="article-title"><td>author: <%= article.author_name %></td></h2>
+      <h3 class="article-body"><td>title: <%= article.title %></td></h3>
+      <h4 class="article-body"><td>description: <%= article.description %></td></h4>
+       <% if current_user.admin? == true %>
+       <span class="delete-button">
+        <%= link_to "Delete", article_path(article.id), :confirm => "Are you sure?", :method => :delete %>
+        </span>
+      <% end %>
+      </div>
+    </tr>
+  <% end %>
+</div>
+
+
+  <%= link_to 'New article', new_article_path %>
+  

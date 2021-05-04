@@ -1,30 +1,102 @@
-# Legendary News Blog
+# Journal Blog
 
-# Description
-- Fork the repo to your Github https://help.github.com/en/articles/fork-a-repo.
-- Push your work to your forked repo "user-name/blog-task".
-- Create pull request in the original repo "nformacy/blog-task"
-
-# Story
-Jon the chief editor in “legendary News” asked the journal owner Michael to make him an appointment with Adam their technical partner to ask them for help.
-He wants to make an app that would help him manage the articles that being posted by the journalists, Michael is the only one that can delete articles, and approve the articles to be published, every article has a title, description, and author name.
+Journal Blog that manages to publish articles by authors, the project aims to have articles that apprroved and managed by admins.
 
 
-# Requirements
-- List of articles publicly available sorted by most popular authors ( who has the highest number of published articles).
-- Create article.
-- Delete article.
-- Approve article.
-- When an author view all articles, they see their own articles first.
-- e2e tests.
-- Edit README to include the required steps to run your application.
+# stack 
 
-# Stack
-- Ruby on Rails is preferred or any stack that fulfills the task.
+- Language: Ruby 2.7.0
+- Web Framework: Rails 5.2.4.4
+- Storage: Sqllite3
+- OS: ubuntu 20.04
 
-# Nice to have
-- Organized and well written git commit history.
-- unit tests.
+# Framework Installation
+ 
+ This project requires ruby on rails installed and functional inside an ubuntu machine to do that follow these steps:- 
 
-# Task Deadline
-- Sunday 9/05/2021 12:00 PM.
+ 1 - Install RVM for ruby environment from [here][https://github.com/rvm/ubuntu_rvm]
+
+ 
+ 2 - Install rails 5.2.4.4
+
+
+    ```
+        gem install rails -v 5.2.4.4
+    ```
+
+
+ 3 - Install bundler 
+
+
+    ```
+        gem install bundler -v 2.1.2
+    ```
+
+# Project installation 
+
+ 1 - Install required dependencies
+
+
+    ```
+        bundle install 
+    ```
+
+ 2 - Setup database
+
+
+    ```
+        rake db:setup
+    ```
+
+
+ 3 - Migrate your database
+
+
+    ```
+        rake db:migrate
+    ```
+
+
+4 - Seed your admin/user to your database
+
+
+    ```
+        rake db:seed
+    ```
+    
+5 - you will find an admin with email `michael@gmail.com` and password `michael96` use this account to approve and delete articles
+
+# Start/Stop Application
+
+* To start application 
+
+
+    ```
+       rails s
+    ```
+
+
+* To stop application 
+
+
+    ```
+       CTRL + C
+    ```
+
+# Run Tests
+
+* To run all tests 
+
+
+    ```
+       rspec
+    ```
+
+
+
+* To run certain test 
+
+
+    ```
+       rspec spec/features/<FILE NAME>.rb
+    ```
