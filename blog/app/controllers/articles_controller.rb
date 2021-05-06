@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
   before_action :authenticate_account! , except: %i[ show ]
   before_action :can_modify , only: %i[ edit update destroy  ]
-
+  after_action :update_counter , only: %i[ update destroy  ]
 
   # GET /articles  
   def index
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     if @article.update(article_edit_params)
-      redirect_to @article, notice: "Article was successfully updated." 
+      redirect_to articles_url, notice: "Article was successfully updated." 
     else
       render :edit, status: :unprocessable_entity 
     end
@@ -71,4 +71,9 @@ class ArticlesController < ApplicationController
     def article_edit_params
       params.require(:article).permit(:approved)
     end
+
+    def update_counter
+      count = Article.all.where(approved: true, account_id: @article.account.id).count
+      Account.where(id: @article.account.id).update(publish_count: count)
+  end
 end
