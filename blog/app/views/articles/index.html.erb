@@ -19,8 +19,10 @@
         <td><%= article.description %></td>
         <td><%= article.approved %></td>
         <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Approve', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_account.is_admin == true %>
+          <td><%= link_to 'Approve', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
