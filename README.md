@@ -28,3 +28,15 @@ He wants to make an app that would help him manage the articles that being poste
 
 # Task Deadline
 - Sunday 9/05/2021 12:00 PM.
+
+To run project
+- bundle install 
+- rake db:create
+- rake db:migrate
+
+```
+rails c
+Account.create!(:name => 'Micheel', is_admin: true , :email => 'micheel@example.com', :password => 'password', :password_confirmation => 'password')
+```
+
+- rails s

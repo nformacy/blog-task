@@ -1,0 +1,9 @@
+
+  <h1><%= @article.title %> </h1>
+
+  <p><%= simple_format @article.description %></p>
+
+
+  <p>Created by <%= @article.account.name %> , <%= time_ago_in_words(@article.created_at) %> ago</p>
+
+
