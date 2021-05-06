@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1
   def update
-    if @article.update(article_params)
+    if @article.update(article_edit_params)
       redirect_to @article, notice: "Article was successfully updated." 
     else
       render :edit, status: :unprocessable_entity 
@@ -65,6 +65,10 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :description, :approved)
+      params.require(:article).permit(:title, :description)
+    end
+
+    def article_edit_params
+      params.require(:article).permit(:approved)
     end
 end

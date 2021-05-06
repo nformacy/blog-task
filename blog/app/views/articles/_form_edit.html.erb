@@ -10,15 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :approved %>
+    <%= form.check_box :approved %>
   </div>
 
   <div class="actions">
