@@ -10,4 +10,4 @@ class Article < ApplicationRecord
     scope :allArticlesForCurrentAccount, ->(current_account) { where(account_id: current_account) }
     scope :allArticlesForOtherAccount, -> (current_account) { where.not(account_id: current_account) }
 
-end
+end 
