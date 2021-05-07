@@ -7,9 +7,9 @@ class ArticlesController < ApplicationController
   # GET /articles  
   def index
     if current_account.is_admin == true
-      @articles = Article.currentAccountIsAdmin(current_account) + Article.otherAccountIsAdmin(current_account)
+      @articles = Article.allArticlesForCurrentAccount(current_account) + Article.allArticlesForOtherAccount(current_account)
     else
-      @articles = Article.currentAccount(current_account) + Article.otherAccount(current_account)
+      @articles = Article.articlesForCurrentAccount(current_account) + Article.articlesForOtherAccount(current_account)
     end
   end
 

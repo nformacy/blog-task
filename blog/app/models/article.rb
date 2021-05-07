@@ -4,10 +4,10 @@ class Article < ApplicationRecord
 
     scope :orderedByPublishCount, -> { where(approved: true).includes(:account).order('accounts.publish_count DESC') }
 
-    scope :currentAccount, ->(current_account) { where(approved: true , account_id: current_account) }
-    scope :otherAccount, -> (current_account) { where(approved: true).where.not(account_id: current_account) }
+    scope :articlesForCurrentAccount, ->(current_account) { where(approved: true , account_id: current_account) }
+    scope :articlesForOtherAccount, -> (current_account) { where(approved: true).where.not(account_id: current_account) }
     
-    scope :currentAccountIsAdmin, ->(current_account) { where(account_id: current_account) }
-    scope :otherAccountIsAdmin, -> (current_account) { where.not(account_id: current_account) }
+    scope :allArticlesForCurrentAccount, ->(current_account) { where(account_id: current_account) }
+    scope :allArticlesForOtherAccount, -> (current_account) { where.not(account_id: current_account) }
 
 end
