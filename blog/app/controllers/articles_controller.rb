@@ -6,8 +6,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles  
   def index
-    @articles = Article.all
-    # @articles = Article.all.where(approved: true)
+    if current_account.is_admin == true
+      @articles = Article.currentAccountIsAdmin(current_account) + Article.otherAccountIsAdmin(current_account)
+    else
+      @articles = Article.currentAccount(current_account) + Article.otherAccount(current_account)
+    end
   end
 
   # GET /articles/1 
@@ -73,7 +76,7 @@ class ArticlesController < ApplicationController
     end
 
     def update_counter
-      count = Article.all.where(approved: true, account_id: @article.account.id).count
-      Account.where(id: @article.account.id).update(publish_count: count)
-  end
+      count = Article.all.where(approved: true, account_id: @article.account_id).count
+      Account.where(id: @article.account_id).update(publish_count: count)
+    end
 end

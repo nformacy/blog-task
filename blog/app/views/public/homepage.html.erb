@@ -4,7 +4,8 @@
         <% @articles.each do |article| %>
             <p class="h5"><%= link_to article.title , article%></p>
             <p><%= article.description %></p>
-        
+            <p>Created by <%= article.account.name %></p>
+             
         <% end %>
     </div>
 </div>
