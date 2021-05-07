@@ -35,7 +35,7 @@ He wants to make an app that would help him manage the articles that being poste
 - `rake db:migrate`
 
 ```
-rails c
+- rails c
 Account.create!(:name => 'Micheel', is_admin: true , :email => 'micheel@example.com', :password => 'password', :password_confirmation => 'password')
 ```
 
