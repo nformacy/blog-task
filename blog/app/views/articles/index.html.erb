@@ -18,10 +18,10 @@
         <td><%= article.description %></td>
         <td><%= article.approved %></td>
         <td><%= article.account.name %></td>
-        <td type="button" class="btn btn-primary"><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Show', article %></td>
         <% if current_account.is_admin == true %>
-          <td type="button" class="btn btn-primary"><%= link_to 'Approve', edit_article_path(article) %></td>
-          <td type="button" class="btn btn-primary"><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Approve', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
       </tr>
     <% end %>
