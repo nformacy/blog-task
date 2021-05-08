@@ -28,3 +28,40 @@ He wants to make an app that would help him manage the articles that being poste
 
 # Task Deadline
 - Sunday 9/05/2021 12:00 PM.
+
+# How to run the project?
+
+the project splitted into backend (API) and frontend (admin folder)
+
+## setup backend
+
+1. install deps
+
+      bundle install
+
+
+2. setup database
+
+      rake db:create
+      rake db:migrate
+      rake db:seed
+
+3. start
+
+      rails s
+
+## setup frontend
+
+in another temrinal pane:
+
+1. go to the directory
+
+      cd admin
+
+2. install deps
+
+      yarn
+
+3. start
+
+      yarn dev
