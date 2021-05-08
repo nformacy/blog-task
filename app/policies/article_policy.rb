@@ -23,4 +23,12 @@ class ArticlePolicy < ApplicationPolicy
   def destroy?
     super_admin?
   end
+
+  def permitted_attributes_for_update
+    if super_admin?
+      Article::SUPER_ADMIN_PERMITTED_ATTRIBUTES
+    else
+      Article::PERMITTED_ATTRIBUTES
+    end
+  end
 end

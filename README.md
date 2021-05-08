@@ -65,3 +65,17 @@ in another temrinal pane:
 3. start
 
       yarn dev
+
+4. use it
+
+there are two accounts seeded in database
+
+1. admin
+
+      username: admin@admin.com
+      password: admin123
+
+1. author
+
+      username: author@admin.com
+      password: admin123

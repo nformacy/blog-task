@@ -1,7 +1,7 @@
 module Api
   module V1
     class ArticleResource < JSONAPI::Resource
-      attributes :title, :content, :publisher_id
+      attributes :title, :content, :publisher_id, :is_published, :is_approved
 
       has_one :publisher, :class_name => "User", :foreign_key => 'publisher_id'
 
