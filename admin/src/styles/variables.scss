@@ -1,0 +1,12 @@
+$grid-horizontal-padding: 120px;
+$grid-horizontal-md-padding: 40px;
+$grid-horizontal-sm-padding: 16px;
+$header-height: 80px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
